@@ -1,7 +1,5 @@
 class User < ActiveRecord::Base
     def looks
-        #is_completed= completed ? "[X]" : "[ ]"
-        "#{id}  #{name}  #{email} "
+         "#{id}  #{name}  #{email} #{password} "
     end
-   
 end

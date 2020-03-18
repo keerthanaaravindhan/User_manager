@@ -10,8 +10,14 @@ class UsersController < ApplicationController
         new_user=User.create!(name:name,email:email,password:pwd)
         render plain: "New todo is created at id #{new_user.id}"
     end 
+
     def login 
         email=params[:email]
         pwd=params[:password]
-        
+        if User.exists?(email: email,password: pwd)
+            render plain: "True"
+        else
+            render plain: "False"
+        end 
+    end
 end
