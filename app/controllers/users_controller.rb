@@ -5,12 +5,6 @@ class UsersController < ApplicationController
     render plain: User.all.order(:id).map { |user| user.looks }.join("\n")
   end
 
-  def show
-    id = params[:id]
-    user = User.find(id)
-    render plain: user.looks
-  end
-
   def create
     name = params[:name]
     email = params[:email]
